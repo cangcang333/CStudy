@@ -3,3 +3,24 @@ spzhu
 20180601
 
 This is C study test program
+
+
+git command
+1. change a directory to git
+    git init
+2. add a file, e.g
+    git add README
+3.commit a file
+    git commit -m "README file" 
+4.connect local git repository and remote git repository,e.g
+    git remote add origin git@github.com:cangcang333/CStudy.git
+5.first push
+    git push -u origin master
+6.after push
+    git push origin master
+
+
+Other git commands:
+    git status
+    git diff README
+
