@@ -22,10 +22,21 @@ int main(int argc, char *argv[])
     {
         printf("%c\n", *(name + i));
     }
-    printf("shit\n");
 
     printf("%s\n", name);
     printf("%c\n", *name);
+
+
+
+    char a = 64;
+    int b = 64;
+    printf("a = %c\n", a);
+    printf("b = %c\n", b);
+    if (b == a)
+        printf("Equal\n");
+    else
+        printf("Not equal\n");
+
 
     return 0;
 }
