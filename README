@@ -18,10 +18,17 @@ git command
     git push -u origin master
 6.after push
     git push origin master
+7.generate ssh key
+    ssh-keygen -t rsa -C "cangcang333@163.com"
 
+    This will create .ssh directory and id_rsa, id_rsa.pub two files
 
 Other git commands:
     git status
     git diff README
+
+
+
+
 
 THE MOST IMPORTANT IS ADD, COMMIT, PUSH 
