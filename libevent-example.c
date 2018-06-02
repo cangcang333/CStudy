@@ -41,7 +41,7 @@ struct fd_state *alloc_fd_state(struct event_base *base, int fd)
 {
     struct fd_state *state;
 
-    state = malloc(sizeof(struct fd_state));
+    state = (struct fd_state *)malloc(sizeof(struct fd_state));
     if (!state)
         return state;
 
@@ -79,7 +79,7 @@ int set_nonblock(int fd)
 
 void do_read(int fd, short events, void *data)
 {
-    struct fd_state *state = data;
+    struct fd_state *state = (struct fd_state *)&data;
     struct proto pbuf;
     int ret;
 
@@ -119,7 +119,7 @@ void do_read(int fd, short events, void *data)
 
 void _do_write(int fd, short events, void *data)
 {
-    struct fd_state *state = data;
+    struct fd_state *state = (struct fd_state *)data;
     int ret;
 
     state->pdata.len = htons(state->pdata.len);
