@@ -117,7 +117,7 @@ void do_read(int fd, short events, void *data)
     fprintf(stderr, "%s\n", pbuf.data);
 }
 
-void _do_write(int fd, short events, void *data)
+void do_write(int fd, short events, void *data)
 {
     struct fd_state *state = (struct fd_state *)data;
     int ret;
