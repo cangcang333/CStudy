@@ -22,6 +22,8 @@ git command
     ssh-keygen -t rsa -C "cangcang333@163.com"
 
     This will create .ssh directory and id_rsa, id_rsa.pub two files
+8.update your local repository
+    git pull origin master
 
 Other git commands:
     git status
@@ -31,4 +33,4 @@ Other git commands:
 
 
 
-THE MOST IMPORTANT IS ADD, COMMIT, PUSH 
+THE MOST IMPORTANT IS ADD, COMMIT, PUSH, PULL
