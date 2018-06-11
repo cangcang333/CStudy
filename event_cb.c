@@ -23,6 +23,7 @@ void run(struct event_base *base)
     struct timeval one_sec = {1, 0};
     struct event *ev;
     /* We're going to set up a repeating timer to get called 100 times */
+    /* The event_self_cbarg() functions was introduced in Libevent 2.1.1-alpha. */
     ev = event_new(base, -1, EV_PERSIST, cb_func, event_self_cbarg());
     event_add(ev, &one_sec);
     event_base_dispatch(base);
