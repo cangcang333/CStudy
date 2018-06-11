@@ -30,7 +30,7 @@ void main_loop(evutil_socket_t fd1, evutil_socket_t fd2)
 
 int main(int argc, char *argv[])
 {
-	/* Create a server and wait for accept */
+	/* Create a client and connect to the server */
 
 
 	return 0;
