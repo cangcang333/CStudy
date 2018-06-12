@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -42,9 +43,9 @@ int main(int argc, char *argv[])
     addrlen = sizeof(addr_sin);
     printf("addrlen is %d\n", addrlen);
 
-    //ret = setsockopt(listenSfd, SOL_SOCKET, SO_REUSEADDR, &reuseAddr, sizeof(reuseAddr));
-    //if (ret < 0)
-    //    handle_error("setsockopt");
+    ret = setsockopt(listenSfd, SOL_SOCKET, SO_REUSEADDR, &reuseAddr, sizeof(reuseAddr));
+    if (ret < 0)
+        handle_error("setsockopt");
 
     ret = bind(listenSfd, (struct sockaddr *)&addr_sin, sizeof(addr_sin));
     if (ret < 0)
