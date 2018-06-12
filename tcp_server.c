@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     memset(&addr_sin, 0, sizeof(struct sockaddr_in));
     addr_sin.sin_family = AF_INET;
     addr_sin.sin_addr.s_addr = htonl(INADDR_ANY);
-    addr_sin.sin_port = htonl(12345);
+    addr_sin.sin_port = htons(12345);    /* WARN: This place can not use htonl(12345) */
     addrlen = sizeof(addr_sin);
     printf("addrlen is %d\n", addrlen);
 
