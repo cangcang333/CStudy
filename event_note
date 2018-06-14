@@ -1,0 +1,15 @@
+
+
+event2/buffer.h
+
+/**
+    An evbuffer is an opaque data type for efficiently buffering data to be
+    sent or received on the network.
+
+    @see event2/event.h for more information
+*/
+struct evbuffer
+#ifdef _EVENT_IN_DOXYGEN
+{}
+#endif
+;
