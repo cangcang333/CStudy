@@ -14,7 +14,7 @@
 #include <string.h>
 /* for inet_pton() */
 #include <arpa/inet.h>
-/* for read() */
+/* for read(), usleep() */
 #include <unistd.h>
 /* for gettimeofday() */
 #include <sys/time.h>
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
         if (n < 0)
         {
             printf("write error\n");
-            sleep(1);
+            usleep(1000000);
         }
 
         n = read(sockfd, recvBuff, MAXBUFSIZE);
@@ -75,7 +75,7 @@ int main(int argc, char *argv[])
                 handle_error("fputs");
             printf("\n");
         }   
-        sleep(2);
+        usleep(1500000);
     }
 
 
