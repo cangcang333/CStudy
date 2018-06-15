@@ -16,6 +16,8 @@
 #include <arpa/inet.h>
 /* for read() */
 #include <unistd.h>
+/* for gettimeofday() */
+#include <sys/time.h>
 
 #define MAXBUFSIZE 4096
 
@@ -26,6 +28,7 @@ int main(int argc, char *argv[])
 {
     int sockfd, n, ret;
     char recvBuff[MAXBUFSIZE + 1];
+    char sendBuff[MAXBUFSIZE + 1];
     struct sockaddr_in servaddr;
 
     printf("argc = %d\n", argc);
@@ -51,16 +54,29 @@ int main(int argc, char *argv[])
     printf("After connect, sockfd = %d\n", sockfd);
 
     /* Read data from the socket and print it to stdout */
-    while ( (n = read(sockfd, recvBuff, MAXBUFSIZE)) > 0 )
+    struct timeval now;
+    while (1) 
     {
-        printf("read %d bytes\n", n);
-        recvBuff[n] = '\0';    /* null terminator */
-        if (fputs(recvBuff, stdout) == EOF)
-            handle_error("fputs");
-    }
-    if (n < 0)
-        handle_error("read");
+        gettimeofday(&now, NULL);
+        sprintf(sendBuff, "%ld.%d", now.tv_sec, now.tv_usec);
+        n = write(sockfd, sendBuff, strlen(sendBuff));
+        if (n < 0)
+        {
+            printf("write error\n");
+            sleep(1);
+        }
 
+        n = read(sockfd, recvBuff, MAXBUFSIZE);
+        if (n > 0)
+        {
+            printf("read %d bytes\n", n);
+            recvBuff[n] = '\0';    /* null terminator */
+            if (fputs(recvBuff, stdout) == EOF)
+                handle_error("fputs");
+            printf("\n");
+        }   
+        sleep(2);
+    }
 
 
     return 0;
