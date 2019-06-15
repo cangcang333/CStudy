@@ -40,7 +40,6 @@ int main(int argc, char **argv)
 	int day = 15;
 	int month = 6;
 	char *dayofweek;
-//	dayofweek = (char *)malloc(sizeof(char) * 10);
 	dayofweek = day_of_week(day, month, year);
 	printf("day of week is %s\n", dayofweek);
 
