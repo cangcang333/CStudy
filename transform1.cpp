@@ -5,6 +5,7 @@
 #include <vector>
 #include <iconv.h>
 #include <numeric>
+#include <wchar.h>
 
 using namespace std;
 
@@ -71,4 +72,7 @@ int main(int argc, char **argv)
 		printf("%X\t", str[i]);
 	}
 	printf("\n");
+
+	wchar_t *wch = L"abcdef";
+	printf("Length of \"%ls\" is %i\n", wch, wcslen(wch));
 }
