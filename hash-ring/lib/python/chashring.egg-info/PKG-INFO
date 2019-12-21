@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: chashring
+Version: 1.0.0
+Summary: Python bindings for C hash-ring library
+Home-page: http://github.com/Instagram/
+Author: Mike Krieger
+Author-email: mike@instagram.com
+License: BSD
+Description: UNKNOWN
+Keywords: hashing hash consistent
+Platform: Any

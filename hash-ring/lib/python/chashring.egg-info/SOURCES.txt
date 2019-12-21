@@ -1,0 +1,6 @@
+chashring.py
+setup.py
+chashring.egg-info/PKG-INFO
+chashring.egg-info/SOURCES.txt
+chashring.egg-info/dependency_links.txt
+chashring.egg-info/top_level.txt
