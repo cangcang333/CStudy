@@ -19,11 +19,19 @@ int main()
 		return -1;
 	}
 
+	int i = 0;
+	for (i = 0; i < 5; i++)
+	{
+		printf("Message_Digest[%d] = 0x%02X\n", i, sha1_ctx.Message_Digest[i]);
+
+	}
+	printf("\n");
+
 	uint64_t keyInt = sha1_ctx.Message_Digest[3];
 	keyInt <<= 32;
 	keyInt |= sha1_ctx.Message_Digest[4];
 	
-	printf("keyInt is %ld\n", keyInt);
+	printf("keyInt is 0x%02lX\n", keyInt);
 
 	return 0;
 }
