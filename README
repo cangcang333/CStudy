@@ -25,6 +25,11 @@ git command
 8.update your local repository
     git pull origin master
 
+9. rename a file
+    git mv <old filename> <new filename>
+and then commit and push
+
+
 Other git commands:
     git status
     git diff README
